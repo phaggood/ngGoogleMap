@@ -5,6 +5,7 @@ angular.module('starter.controllers', [])
     .controller('DashCtrl', function($scope) {
     })
 
+    //http://codepen.io/udomsak/pen/Llzsj
     .controller('MapCtrl', function($scope, $cordovaGeolocation) {
         $scope.msg = "";
         $scope.coords = [0,0];
