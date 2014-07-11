@@ -9,6 +9,7 @@ angular.module('starter.controllers', [])
 
             // get coords
             $cordovaGeolocation.getCurrentPosition().then(function(position) {
+                // Position here: position.coords.latitude, position.coords.longitude
                 console.log("setting map");
                 $scope.msg = position.toString();
                 // http://angular-google-maps.org/use
@@ -18,12 +19,12 @@ angular.module('starter.controllers', [])
                         longitude: position.coords.longitude
                     },
                     zoom: 8
+                }
 
-                }, function(err) {
-                    // error
-                };
+            }, function(err) {
+                // error
             });
-        }
+        };
 
         init();
     })
