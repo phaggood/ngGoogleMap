@@ -15,8 +15,8 @@ angular.module('starter.controllers', [])
                 // http://angular-google-maps.org/use
                 $scope.map = {
                     center: {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude
+                        latitude: parseFloat(position.coords.latitude),
+                        longitude: parseFloat(position.coords.longitude)
                     },
                     zoom: 8
                 }
