@@ -1,0 +1,18 @@
+<ion-nav-view animation="slide-left-right">
+    <ion-content>
+        <div class="list card">
+
+            <div class="item">
+                <h1>SMap</h1>
+                <p>{{centerLat}}:{{centerLng}}</p>
+                <p>Url:{{mapUrl}}</p>
+            </div>
+
+            <div class="item item-body">
+                <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{mapLatLng}}&size={{mapSize}}&zoom={{mapZoom}}"/>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-nav-view>
+

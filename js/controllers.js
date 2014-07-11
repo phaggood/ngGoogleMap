@@ -44,9 +44,36 @@ angular.module('starter.controllers', [])
                 zoom: 12
             };
         };
+        init();
+    })
 
+    //http://codepen.io/udomsak/pen/Llzsj
+    .controller('SMapCtrl', function($scope, $cordovaGeolocation) {
+        console.log("init map");
+        $scope.msg = "";
 
+        var init = function () {
 
+            // get coords
+            $cordovaGeolocation.getCurrentPosition().then(function(position) {
+                // Position here: position.coords.latitude, position.coords.longitude
+                console.log("setting map");
+                $scope.msg = position.coords.latitude + ":" + position.coords.longitude;
+                $scope.updateCenter(position.coords.latitude, position.coords.longitude);
+            }, function(err) {
+                $scope.msg = "unable to determine location";
+            });
+        };
+           //http://maps.googleapis.com/maps/api/staticmap?center=42.280826,-83.743038&size=400x350&zoom=16
+        $scope.updateCenter = function(lat, lng) {
+            $scope.centerLat = lat;
+            $scope.centerLng = lng;
+
+            $scope.mapLatLng = lat + "," + lng;
+            $scope.mapZoom = 16;
+            $scope.mapSize = "400x350";
+
+        };
         init();
     })
 

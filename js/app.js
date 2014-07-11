@@ -68,6 +68,15 @@ angular.module('starter', ['ionic','ngCordova', 'google-maps','starter.controlle
           }
       })
 
+      .state('tab.smap', {
+          url: '/smap',
+          views: {
+              'tab-smap': {
+                  templateUrl: 'templates/tab-smap.html',
+                  controller: 'SMapCtrl'
+              }
+          }
+      })
 
     .state('tab.friends', {
       url: '/friends',
