@@ -7,6 +7,7 @@ angular.module('starter.controllers', [])
 
     //http://codepen.io/udomsak/pen/Llzsj
     .controller('MapCtrl', function($scope, $cordovaGeolocation) {
+        console.log("init map");
         $scope.msg = "";
         $scope.coords = [0,0];
         $scope.mapVisible = true;
