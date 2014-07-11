@@ -4,11 +4,13 @@ angular.module('starter.controllers', [])
     })
 
     .controller('MapCtrl', function($scope, $cordovaGeolocation) {
+        $scope.msg = "";
         var init = function () {
 
             // get coords
             $cordovaGeolocation.getCurrentPosition().then(function(position) {
                 console.log("setting map");
+                $scope.msg = position.toString();
                 // http://angular-google-maps.org/use
                 $scope.map = {
                     center: {
