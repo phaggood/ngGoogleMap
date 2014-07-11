@@ -51,7 +51,7 @@ angular.module('starter', ['ionic','google-maps', 'starter.controllers', 'starte
       .state('tab.map', {
           url: '/map',
           views: {
-              'tab-dash': {
+              'tab-map': {
                   templateUrl: 'templates/tab-map.html',
                   controller: 'MapCtrl'
               }
