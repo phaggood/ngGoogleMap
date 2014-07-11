@@ -51,6 +51,7 @@ angular.module('starter.controllers', [])
     .controller('SMapCtrl', function($scope, $cordovaGeolocation) {
         console.log("init map");
         $scope.msg = "";
+        $scope.imageUrl = "http://www.boem.gov/uploadedImages/BOEM/Newsroom/Publications_Library/library.jpg" ;
 
         var init = function () {
 
@@ -69,9 +70,11 @@ angular.module('starter.controllers', [])
             $scope.centerLat = lat;
             $scope.centerLng = lng;
 
-            $scope.mapLatLng = lat + "," + lng;
-            $scope.mapZoom = 16;
-            $scope.mapSize = "400x350";
+            var mapLatLng = "?center=" + lat + "," + lng;
+            var mapZoom = "&zoom=16";
+            var mapSize = "&size=400x350";
+            $scope.markers = [];
+            $scope.imageUrl = "http://maps.googleapis.com/maps/api/staticmap" + mapLatLng + mapZoom + mapSize;
 
         };
         init();

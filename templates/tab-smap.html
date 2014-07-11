@@ -5,11 +5,11 @@
             <div class="item">
                 <h1>SMap</h1>
                 <p>{{centerLat}}:{{centerLng}}</p>
-                <p>Url:{{mapUrl}}</p>
+                <p>Url:{{imageUrl}}</p>
             </div>
             <div class="item item-image">
                 <div class="item item-body">
-                    <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{mapLatLng}}&size={{mapSize}}&zoom={{mapZoom}}"/>
+                    <img ng-src="{{imageUrl}}"/>
                 </div>
             </div>
         </div>
