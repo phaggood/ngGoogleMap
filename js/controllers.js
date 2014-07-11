@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
     })
 
 
-    //http://codepen.io/udomsak/pen/Llzsj
+    // http://angular-google-maps.org/api
     .controller('GMapCtrl', function($scope, $cordovaGeolocation) {
         console.log("init gmap");
         $scope.msg = "";
