@@ -5,6 +5,50 @@ angular.module('starter.controllers', [])
     .controller('DashCtrl', function($scope) {
     })
 
+
+    //http://codepen.io/udomsak/pen/Llzsj
+    .controller('GMapCtrl', function($scope, $cordovaGeolocation) {
+        console.log("init gmap");
+        $scope.msg = "";
+        $scope.map = {
+            center: {
+                latitude: 45,
+                longitude: -73
+            },
+            zoom: 12
+        };
+
+        var init = function () {
+
+            // get coords
+            $cordovaGeolocation.getCurrentPosition().then(function (position) {
+                // Position here: position.coords.latitude, position.coords.longitude
+                console.log("setting map");
+                $scope.msg = position.coords.latitude + ":" + position.coords.longitude;
+                $scope.updateCenter(parseFloat(position.coords.latitude), parseFloat(position.coords.longitude));
+            }, function (err) {
+                $scope.msg = "unable to determine location";
+            });
+        };
+
+        $scope.updateCenter = function(lat, lng) {
+            //$scope.map.control.refresh({latitude: lat, longitude: lng});
+            $scope.centerLat = lat;
+            $scope.centerLng = lng;
+            $scope.map = {
+                center: {
+                    latitude: lat,
+                    longitude: lng
+                },
+                zoom: 12
+            };
+        };
+
+
+
+        init();
+    })
+
     //http://codepen.io/udomsak/pen/Llzsj
     .controller('MapCtrl', function($scope, $cordovaGeolocation) {
         console.log("init map");
