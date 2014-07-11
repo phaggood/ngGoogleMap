@@ -1,16 +1,17 @@
-<ion-view style="background: transparent;">
-    <div class="list card">
+<ion-nav-view animation="slide-left-right">
+    <ion-content>
+        <div class="list card">
 
-        <div class="item">
-            <h1>Map</h1>
-            <p>{{centerLat}}:{{centerLng}}</p>
-        </div>
+            <div class="item">
+                <h1>Map</h1>
+                <p>{{centerLat}}:{{centerLng}}</p>
+            </div>
 
-        <div class="item item-body">
-            <google-map center="map.center" zoom="map.zoom"></google-map>
+            <div class="item item-body">
+                <google-map center="map.center" zoom="map.zoom"></google-map>
+            </div>
         </div>
-    </div>
 
     </ion-content>
-</ion-view>
+</ion-nav-view>
 
