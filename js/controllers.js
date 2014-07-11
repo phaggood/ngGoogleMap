@@ -6,43 +6,6 @@ angular.module('starter.controllers', [])
     })
 
 
-    // http://angular-google-maps.org/api
-    .controller('AMapCtrl', function($scope, $cordovaGeolocation) {
-        console.log("init gmap");
-        $scope.msg = "";
-        $scope.map = {
-            center: [0,0],
-            zoom: 12
-        };
-
-        var init = function () {
-
-            // get coords
-            $cordovaGeolocation.getCurrentPosition().then(function (position) {
-                // Position here: position.coords.latitude, position.coords.longitude
-                console.log("setting map");
-                $scope.msg = position.coords.latitude + ":" + position.coords.longitude;
-                $scope.updateCenter(parseFloat(position.coords.latitude), parseFloat(position.coords.longitude));
-            }, function (err) {
-                $scope.msg = "unable to determine location";
-            });
-        };
-
-        $scope.updateCenter = function(lat, lng) {
-            //$scope.map.control.refresh({latitude: lat, longitude: lng});
-            $scope.centerLat = lat;
-            $scope.centerLng = lng;
-            $scope.map = {
-                center: [lat,lng],
-                zoom: 12
-            };
-        };
-
-
-
-        init();
-    })
-
 
     // http://angular-google-maps.org/api
     .controller('GMapCtrl', function($scope, $cordovaGeolocation) {

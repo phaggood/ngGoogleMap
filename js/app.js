@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ngCordova', 'ngMap','google-maps','starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','ngCordova', 'google-maps','starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -69,16 +69,6 @@ angular.module('starter', ['ionic','ngCordova', 'ngMap','google-maps','starter.c
       })
 
 
-
-      .state('tab.amap', {
-          url: '/amap',
-          views: {
-              'tab-amap': {
-                  templateUrl: 'templates/tab-amap.html',
-                  controller: 'AMapCtrl'
-              }
-          }
-      })
     .state('tab.friends', {
       url: '/friends',
       views: {
